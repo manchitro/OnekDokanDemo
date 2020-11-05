@@ -6,6 +6,7 @@ import ProfileContext from "./contexts/ProfileContext";
 
 import HomePage from "./pages/homepage/homepage.component";
 import LoginPage from "./pages/loginpage/loginpage.component";
+import SignUpPage from "./pages/signuppage/signuppage.component";
 
 import { Navigation } from "./components/navigation/navigation.component";
 import { Sidebar } from "./components/sidebar/sidebar.component";
@@ -42,6 +43,7 @@ function App() {
           <Switch>
             <Route exact path="/" component={HomePage} />
             <Route exact path="/login" component={LoginPage} />
+            <Route exact path="/signup" component={SignUpPage} />
           </Switch>
         </BrowserRouter>
         </ProfileContext.Provider>

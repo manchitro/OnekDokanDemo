@@ -17,6 +17,6 @@ export const Navigation = () => (
     <NavButton buttonText="Home"/>
     <NavButton buttonText="Shops"/>
     <NavButton buttonText="Account"/>
-    <NavButton buttonText="Logout" buttonColor="red"/>
+    <NavButton buttonText="Login" buttonColor="green"/>
   </div>
 );

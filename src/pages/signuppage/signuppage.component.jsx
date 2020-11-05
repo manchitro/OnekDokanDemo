@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 import FormInput from "../../components/form-input/form-input.component";
 
@@ -8,8 +9,9 @@ import CustomButton from "../../components/custom-button/custom-button.component
 import "./signuppage.styles.scss";
 
 const SignUpPage = () => {
-  const [displayName, setDisplayName] = useState("");
+  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
@@ -19,15 +21,15 @@ const SignUpPage = () => {
 
   return (
     <div className="sign-up">
-      <h2 className="title">I do not have a account</h2>
-      <span>Sign up with your email and password</span>
-      <form onSubmit={handleSubmit} className="sign-up-form">
+      <h2>Signup</h2>
+      <span>Create an account</span>
+      <form onSubmit={handleSubmit} className="signup-form">
         <FormInput
           type="text"
-          name="displayName"
-          value={displayName}
-          onChange={(e) => setDisplayName(e.target.value)}
-          label="Display Name"
+          name="username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          placeholder="Username"
           required
         />
         <FormInput
@@ -35,7 +37,15 @@ const SignUpPage = () => {
           name="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          label="Email"
+          placeholder="Email"
+          required
+        />
+        <FormInput
+          type="text"
+          name="phone"
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+          placeholder="Phone no."
           required
         />
         <FormInput
@@ -43,7 +53,7 @@ const SignUpPage = () => {
           name="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          label="Password"
+          placeholder="Password"
           required
         />
         <FormInput
@@ -51,10 +61,13 @@ const SignUpPage = () => {
           name="confirmPassword"
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
-          label="Confirm Password"
+          placeholder="Confirm Password"
           required
         />
-        <CustomButton type="submit">SIGN UP</CustomButton>
+        <div className="buttons">
+          <CustomButton type="submit">Signup</CustomButton>
+          <Link className="create-account" to="/login">Have an account? Log in here</Link>
+        </div>
       </form>
     </div>
   );

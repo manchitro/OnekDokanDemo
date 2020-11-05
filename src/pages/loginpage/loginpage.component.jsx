@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 import FormInput from "../../components/form-input/form-input.component";
 
@@ -19,16 +20,16 @@ const LoginPage = () => {
 
   return (
     <div className="login">
-      <h2>I already have an account</h2>
+      <h2>Login</h2>
       <span>Sign in with your email and password</span>
 
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="login-form">
         <FormInput
           type="text"
           name="uid"
           value={uid}
-          handleChange={(e) => setUid(e.target.value)}
-          label="Username/Email"
+          handleChange={(e) => setUid(e.target.value)} 
+          placeholder="Email or Username"
           required
         />
         <FormInput
@@ -36,17 +37,19 @@ const LoginPage = () => {
           name="password"
           handleChange={(e) => setPassword(e.target.value)}
           value={password}
-          label="Password"
+          placeholder="Password"
           required
         />
 
         <div className="buttons">
+          <Link className="forgot-password">Forgot Password?</Link>
           <CustomButton type="submit" value="Submit Form">
             Login
           </CustomButton>
           {/* <CustomButton onClick={signInWithGoogle} isGoogleSignIn>
             Sign In With Google
           </CustomButton> */}
+          <Link className="create-account" to="/signup">Create an account?</Link>
         </div>
       </form>
     </div>

@@ -1,20 +1,20 @@
 .custom-button {
-  min-width: 165px;
+  min-width: 12 0px;
   width: auto;
-  height: 50px;
+  height: 45px;
   letter-spacing: 0.5px;
-  line-height: 50px;
+  line-height: 45px;
   padding: 0 35px 0 35px;
   font-size: 15px;
   background-color: black;
   color: white;
-  text-transform: uppercase;
-  font-family: "Open Sans Condensed";
   font-weight: bolder;
   border: none;
   cursor: pointer;
   display: flex;
   justify-content: center;
+  transition: 0.3s ease;
+  font-family: "Poppins", sans-serif;
 
   &:hover {
     background-color: white;
@@ -34,11 +34,11 @@
 
   &.inverted {
     background-color: white;
-    color: black;
+    color: #505050;
     border: 1px solid black;
 
     &:hover {
-      background-color: black;
+      background-color: #505050;
       color: white;
     }
   }

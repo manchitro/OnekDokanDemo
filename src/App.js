@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./App.css";
 import { Switch, Route, Redirect, BrowserRouter } from "react-router-dom";
 
 import HeaderContext from "./contexts/HeaderContext";
@@ -23,29 +24,29 @@ function App() {
     currentPage,
     setCurrentPage,
     sidebarVisibility,
-    setSidebarVisibility
+    setSidebarVisibility,
   };
 
   const ProfileState = {
     profileName,
     setProfileName,
     profilePicLink,
-    setProfilePicLink
-  }
+    setProfilePicLink,
+  };
 
   return (
     <div className="App">
-      <HeaderContext.Provider value={HeaderState}> 
-      <ProfileContext.Provider value={ProfileState}>
-        <Navigation />
-        <Sidebar />
-        <BrowserRouter>
-          <Switch>
-            <Route exact path="/" component={HomePage} />
-            <Route exact path="/login" component={LoginPage} />
-            <Route exact path="/signup" component={SignUpPage} />
-          </Switch>
-        </BrowserRouter>
+      <HeaderContext.Provider value={HeaderState}>
+        <ProfileContext.Provider value={ProfileState}>
+          <Navigation />
+          <Sidebar />
+          <div className="container">
+            <Switch>
+              <Route exact path="/" component={HomePage} />
+              <Route exact path="/login" component={LoginPage} />
+              <Route exact path="/signup" component={SignUpPage} />
+            </Switch>
+          </div>
         </ProfileContext.Provider>
       </HeaderContext.Provider>
     </div>

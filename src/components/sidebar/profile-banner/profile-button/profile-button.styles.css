@@ -1,0 +1,14 @@
+.profileButton button{
+    font-family: "Poppins", sans-serif;
+    background-color:white;
+    padding: 5px 10px;
+    border: 1px solid #707070;
+    border-radius: 0.5em;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.profileButton button:hover{
+    background-color: #DDD;
+    border-radius: 0;
+}

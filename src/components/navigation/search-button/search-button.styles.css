@@ -1,0 +1,22 @@
+.searchbutton {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 3vw;
+  min-width: 3vw;
+}
+
+.searchbutton button {
+  background-color: white;
+  border: 1px solid #707070;
+  border-radius: 0 100px 100px 0;
+  height: 55%;
+  cursor: pointer;
+}
+
+.searchbutton button svg {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: auto;
+}

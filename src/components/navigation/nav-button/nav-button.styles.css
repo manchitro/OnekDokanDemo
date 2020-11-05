@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap");
+
+.navbutton {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 20px;
+  width: 8vw;
+}
+
+.navbutton button {
+  font-family: "Poppins", sans-serif;
+  border: none;
+  background-color: white;
+  font-weight: bold;
+  font-size: 1em;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.navbutton button:hover {
+  font-size: 120%;
+}
+
+.currentPage{
+  border-bottom: 3px solid #707070;
+}

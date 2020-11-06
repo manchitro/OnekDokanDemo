@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
-import { Switch, Route, Redirect, BrowserRouter } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 
 import HeaderContext from "./contexts/HeaderContext";
 import ProfileContext from "./contexts/ProfileContext";
@@ -19,6 +19,7 @@ function App() {
   const [profilePicLink, setProfilePicLink] = useState(
     "https://www.biography.com/.image/t_share/MTQyMDA0NDgwMzUzNzcyNjA2/mark-zuckerberg_gettyimages-512304736jpg.jpg"
   );
+  const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
 
   const HeaderState = {
     currentPage,
@@ -32,6 +33,8 @@ function App() {
     setProfileName,
     profilePicLink,
     setProfilePicLink,
+    isUserLoggedIn,
+    setIsUserLoggedIn,
   };
 
   return (
@@ -43,7 +46,13 @@ function App() {
           <div className="container">
             <Switch>
               <Route exact path="/" component={HomePage} />
-              <Route exact path="/login" component={LoginPage} />
+              <Route
+                exact
+                path="/login"
+                render={() =>
+                  isUserLoggedIn ? <Redirect to="/" /> : <LoginPage />
+                }
+              />
               <Route exact path="/signup" component={SignUpPage} />
             </Switch>
           </div>

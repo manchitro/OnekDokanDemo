@@ -1,24 +1,35 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useContext } from "react";
+import { Link, useHistory } from "react-router-dom";
 
 import FormInput from "../../components/form-input/form-input.component";
 
 import CustomButton from "../../components/custom-button/custom-button.component";
 
+import ProfileContext from "../../contexts/ProfileContext";
 // import { auth, signInWithGoogle } from "../../firebase/firebase.utils";
 
 import "./loginPage.styles.scss";
 
 const LoginPage = () => {
+  const { setIsUserLoggedIn } = useContext(ProfileContext);
+  let history = useHistory();
+  const validateUser = () => {
+    if (uid === "admin" && password === "admin") {
+      setIsUserLoggedIn(true);
+      history.push("/");
+    } else {
+      alert("username or password is incorrect");
+    }
+  };
+
+
   const [uid, setUid] = useState("");
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    alert(uid);
   };
-
   return (
     <div className="login">
       <h2>Login</h2>
@@ -52,8 +63,14 @@ const LoginPage = () => {
         </FormInput>
 
         <div className="buttons">
-          <Link className="forgot-password">Forgot Password?</Link>
-          <CustomButton type="submit" value="Submit Form">
+          <Link className="forgot-password" to="/forgotPassword">
+            Forgot Password?
+          </Link>
+          <CustomButton
+            type="submit"
+            value="Submit Form"
+            onClick={validateUser}
+          >
             Login
           </CustomButton>
           {/* <CustomButton onClick={signInWithGoogle} isGoogleSignIn>

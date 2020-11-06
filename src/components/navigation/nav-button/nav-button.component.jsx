@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { useHistory } from "react-router-dom";
-import CurrentPageContext from "../../../contexts/HeaderContext";
+import HeaderContext from "../../../contexts/HeaderContext";
+import ProfileContext from "../../../contexts/ProfileContext";
 import "./nav-button.styles.css";
 
 var shadow = {
@@ -8,11 +9,17 @@ var shadow = {
 };
 
 export const NavButton = (props) => {
-  const { currentPage } = useContext(CurrentPageContext);
+  const { currentPage } = useContext(HeaderContext);
+  const { setIsUserLoggedIn } = useContext(ProfileContext);
 
   let history = useHistory();
   const redirect = () => {
     history.push(`/${props.buttonText === "Home" ? "" : props.buttonText}`);
+  };
+
+  const logout = () => {
+    setIsUserLoggedIn(false);
+    history.push("/login");
   };
 
   return (
@@ -22,7 +29,12 @@ export const NavButton = (props) => {
       }  navbutton`}
       style={{ shadow }}
     >
-      <button style={{ color: props.buttonColor }} onClick={redirect}>{props.buttonText}</button>
+      <button
+        style={{ color: props.buttonColor }}
+        onClick={props.buttonText === "Logout" ? logout : redirect}
+      >
+        {props.buttonText}
+      </button>
     </div>
   );
 };

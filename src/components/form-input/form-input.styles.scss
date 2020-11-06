@@ -18,3 +18,13 @@
     padding: 15px 15px;
   }
 }
+
+.checkBox{
+  justify-content: flex-start;
+  align-items: center;
+  
+  input[type=checkbox]{
+    width: auto;
+    margin-right: 5px;
+  }
+}

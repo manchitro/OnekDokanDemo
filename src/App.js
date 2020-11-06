@@ -5,9 +5,9 @@ import { Switch, Route, Redirect, BrowserRouter } from "react-router-dom";
 import HeaderContext from "./contexts/HeaderContext";
 import ProfileContext from "./contexts/ProfileContext";
 
-import HomePage from "./pages/homepage/homepage.component";
-import LoginPage from "./pages/loginpage/loginpage.component";
-import SignUpPage from "./pages/signuppage/signuppage.component";
+import HomePage from "./pages/homePage/homePage.component";
+import LoginPage from "./pages/loginPage/loginPage.component";
+import SignUpPage from "./pages/signupPage/signupPage.component";
 
 import { Navigation } from "./components/navigation/navigation.component";
 import { Sidebar } from "./components/sidebar/sidebar.component";

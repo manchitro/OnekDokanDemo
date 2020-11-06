@@ -6,7 +6,7 @@ import FormInput from "../../components/form-input/form-input.component";
 import CustomButton from "../../components/custom-button/custom-button.component";
 // import { auth, createUserProfileDocument } from "../../firebase/firebase.utils";
 
-import "./signuppage.styles.scss";
+import "./signupPage.styles.scss";
 
 const SignUpPage = () => {
   const [username, setUsername] = useState("");

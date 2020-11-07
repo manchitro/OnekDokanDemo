@@ -27,6 +27,7 @@ function App() {
     "https://www.biography.com/.image/t_share/MTQyMDA0NDgwMzUzNzcyNjA2/mark-zuckerberg_gettyimages-512304736jpg.jpg"
   );
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
+  const [isCartHidden, setIsCartHidden] = useState(true);
 
   useEffect(() => {
     const data = localStorage.getItem("login-status");
@@ -44,6 +45,8 @@ function App() {
     setCurrentPage,
     sidebarVisibility,
     setSidebarVisibility,
+    isCartHidden,
+    setIsCartHidden,
   };
 
   const ProfileState = {
@@ -70,7 +73,7 @@ function App() {
               <Route exact path="/admin/Shop" component={AdminShop} />
               <Route exact path="/admin/Products" component={AdminProducts} />
               <Route exact path="/admin/customers" component={AdminCustomers} />
-              <Route path="/shop" component={ShopPage} /> 
+              <Route path="/shops" component={ShopPage} /> 
               <Route exact path="/checkout" component={CheckoutPage} />
             </Switch>
           </div>

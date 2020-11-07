@@ -11,6 +11,8 @@ import { NavButton } from "./nav-button/nav-button.component";
 import CartIcon from "../cart-icon/cart-icon.component";
 import CartDropdown from "../cart-dropdown/cart-dropdown.component";
 import { selectCartHidden } from "../../redux/cart/cart.selectors";
+import HeaderContext from "../../contexts/HeaderContext";
+
 
 import ProfileContext from "../../contexts/ProfileContext";
 
@@ -18,6 +20,8 @@ import "./navigation.styles.css";
 
 const Navigation = ({hidden}) => {
   const { isUserLoggedIn } = useContext(ProfileContext);
+  const { isCartHidden } = useContext(HeaderContext);
+
   return (
     <div className="navigation">
       <HamButton />
@@ -33,7 +37,7 @@ const Navigation = ({hidden}) => {
         <NavButton buttonText="Login" buttonColor="green" />
       )}
       <CartIcon/>
-      {hidden ? null : <CartDropdown />}
+      {isCartHidden ? null : <CartDropdown />}
     </div>
   );
 };

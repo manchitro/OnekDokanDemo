@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 
@@ -19,7 +19,26 @@ import "./navigation.styles.css";
 
 const Navigation = ({ hidden }) => {
   const { isUserLoggedIn } = useContext(ProfileContext);
-  const { isCartHidden } = useContext(HeaderContext);
+  const { isCartHidden, setIsCartHidden } = useContext(HeaderContext);
+
+  //reference to cart icon and cart dropdown
+  let cartRef = useRef();
+
+  //using cartref to know if mousedown was on cart icon or dropdown
+  useEffect(() => {
+    const handler= (event) => {
+      //if mousedown was not on cart icon or dropdown (outside), close cart
+      if (!cartRef.current.contains(event.target)) {
+        setIsCartHidden(true);        
+      }
+    }
+
+    document.addEventListener("mousedown", handler);
+
+    return () => {
+      document.removeEventListener("mousedown", handler)
+    }
+  });
 
   return (
     <div className="navigation">
@@ -35,8 +54,10 @@ const Navigation = ({ hidden }) => {
       ) : (
         <NavButton buttonText="Login" buttonColor="green" />
       )}
+      <div ref={cartRef}>
       <CartIcon />
       {isCartHidden ? null : <CartDropdown />}
+      </div>
     </div>
   );
 };

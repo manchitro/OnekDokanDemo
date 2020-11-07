@@ -19,7 +19,7 @@ const Cart = ({ cartItems, history }) => {
             <CartItem key={cartItem.id} item={cartItem} />
           ))
         ) : (
-          <span className="empty-message">Add Items to the Cart</span>
+          <span className="empty-message">Cart is empty!</span>
         )}
       </div>
       <CustomButton

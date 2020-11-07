@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 
 import HeaderContext from "./contexts/HeaderContext";
 import ProfileContext from "./contexts/ProfileContext";

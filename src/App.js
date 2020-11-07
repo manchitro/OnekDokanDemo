@@ -5,9 +5,11 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import HeaderContext from "./contexts/HeaderContext";
 import ProfileContext from "./contexts/ProfileContext";
 
+
 import HomePage from "./pages/homePage/homePage.component";
 import LoginPage from "./pages/loginPage/loginPage.component";
 import SignUpPage from "./pages/signupPage/signupPage.component";
+import ShopPage from "./pages/shop/shop.component";
 
 import { Navigation } from "./components/navigation/navigation.component";
 import { Sidebar } from "./components/sidebar/sidebar.component";
@@ -53,22 +55,16 @@ function App() {
       <HeaderContext.Provider value={HeaderState}>
         <ProfileContext.Provider value={ProfileState}>
           <Navigation />
-          <Sidebar />
           <div className="container">
             <Switch>
               <Route exact path="/" component={HomePage} />
               {/* {isUserLoggedIn && <Redirect exact path="/login" to="/" />} */}
               <Route exact path="/login" component={LoginPage} />
-              {/* <Route
-                exact
-                path="/login"
-                render={() => {
-                  isUserLoggedIn ? <Redirect to='/' /> : <LoginPage />;
-                }}
-              /> */}
               <Route exact path="/signup" component={SignUpPage} />
+              <Route path="/shop" component={ShopPage} /> 
             </Switch>
           </div>
+          <Sidebar />
         </ProfileContext.Provider>
       </HeaderContext.Provider>
     </div>

@@ -1,0 +1,49 @@
+.login {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 60px 60px;
+  background-color: white;
+  border: 1px solid #707070;
+  border-radius: 40px;
+  max-height: 500px;
+
+  .title {
+    margin: 10px 0;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-top: 20px;
+  }
+
+  h2 {
+    font-weight: bold;
+    font-size: 1.9em;
+  }
+}
+
+.login-form {
+  margin: 20px 0;
+}
+
+.forgot-password {
+  margin: auto 0;
+  text-decoration: none;
+  color: #505050;
+  font-size: 95%;
+}
+
+.create-account {
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: -20px;
+  font-size: 120%;
+  text-decoration: none;
+  color: #505050;
+}

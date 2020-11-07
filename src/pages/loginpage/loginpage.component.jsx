@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 
 import FormInput from "../../components/form-input/form-input.component";
@@ -11,7 +11,7 @@ import ProfileContext from "../../contexts/ProfileContext";
 import "./loginPage.styles.scss";
 
 const LoginPage = () => {
-  const { setIsUserLoggedIn } = useContext(ProfileContext);
+  const { isUserLoggedIn, setIsUserLoggedIn } = useContext(ProfileContext);
   let history = useHistory();
   const validateUser = () => {
     if (uid === "admin" && password === "admin") {
@@ -22,7 +22,11 @@ const LoginPage = () => {
     }
   };
 
-
+  useEffect(() => {
+    if (isUserLoggedIn) {
+      history.push("/");
+    }
+  });
   const [uid, setUid] = useState("");
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState("");

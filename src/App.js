@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import { Switch, Route, Redirect } from "react-router-dom";
 
@@ -20,6 +20,17 @@ function App() {
     "https://www.biography.com/.image/t_share/MTQyMDA0NDgwMzUzNzcyNjA2/mark-zuckerberg_gettyimages-512304736jpg.jpg"
   );
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const data = localStorage.getItem("login-status");
+    if (data) {
+      setIsUserLoggedIn(JSON.parse(data));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("login-status", JSON.stringify(isUserLoggedIn));
+  }, [isUserLoggedIn]);
 
   const HeaderState = {
     currentPage,
@@ -46,13 +57,15 @@ function App() {
           <div className="container">
             <Switch>
               <Route exact path="/" component={HomePage} />
-              <Route
+              {/* {isUserLoggedIn && <Redirect exact path="/login" to="/" />} */}
+              <Route exact path="/login" component={LoginPage} />
+              {/* <Route
                 exact
                 path="/login"
-                render={() =>
-                  isUserLoggedIn ? <Redirect to="/" /> : <LoginPage />
-                }
-              />
+                render={() => {
+                  isUserLoggedIn ? <Redirect to='/' /> : <LoginPage />;
+                }}
+              /> */}
               <Route exact path="/signup" component={SignUpPage} />
             </Switch>
           </div>

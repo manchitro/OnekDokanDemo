@@ -1,8 +1,7 @@
-
 .group {
   position: relative;
   display: flex;
-  justify-content:center;
+  justify-content: center;
 
   .form-input {
     background: none;
@@ -19,11 +18,11 @@
   }
 }
 
-.checkBox{
+.checkBox {
   justify-content: flex-start;
   align-items: center;
-  
-  input[type=checkbox]{
+
+  input[type="checkbox"] {
     width: auto;
     margin-right: 5px;
   }

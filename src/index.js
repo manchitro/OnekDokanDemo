@@ -9,15 +9,14 @@ import App from "./App.js";
 import "./index.css";
 
 ReactDOM.render(
-  
-    <Provider store={store}>
-      <React.StrictMode>
+  <Provider store={store}>
+    <React.StrictMode>
       <BrowserRouter>
         <PersistGate persistor={persistor}>
           <App />
         </PersistGate>
       </BrowserRouter>
-      </React.StrictMode>
-    </Provider>,
-    document.getElementById("root")
+    </React.StrictMode>
+  </Provider>,
+  document.getElementById("root")
 );

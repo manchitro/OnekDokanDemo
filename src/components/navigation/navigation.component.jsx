@@ -13,12 +13,11 @@ import CartDropdown from "../cart-dropdown/cart-dropdown.component";
 import { selectCartHidden } from "../../redux/cart/cart.selectors";
 import HeaderContext from "../../contexts/HeaderContext";
 
-
 import ProfileContext from "../../contexts/ProfileContext";
 
 import "./navigation.styles.css";
 
-const Navigation = ({hidden}) => {
+const Navigation = ({ hidden }) => {
   const { isUserLoggedIn } = useContext(ProfileContext);
   const { isCartHidden } = useContext(HeaderContext);
 
@@ -36,14 +35,14 @@ const Navigation = ({hidden}) => {
       ) : (
         <NavButton buttonText="Login" buttonColor="green" />
       )}
-      <CartIcon/>
+      <CartIcon />
       {isCartHidden ? null : <CartDropdown />}
     </div>
   );
 };
 
 const mapStateToProps = createStructuredSelector({
-  hidden: selectCartHidden
+  hidden: selectCartHidden,
 });
 
 export default connect(mapStateToProps)(Navigation);

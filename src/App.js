@@ -5,7 +5,6 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import HeaderContext from "./contexts/HeaderContext";
 import ProfileContext from "./contexts/ProfileContext";
 
-
 import HomePage from "./pages/homePage/homePage.component";
 import LoginPage from "./pages/loginPage/loginPage.component";
 import SignUpPage from "./pages/signupPage/signupPage.component";
@@ -69,11 +68,15 @@ function App() {
               {/* {isUserLoggedIn && <Redirect exact path="/login" to="/" />} */}
               <Route exact path="/login" component={LoginPage} />
               <Route exact path="/signup" component={SignUpPage} />
-              <Route exact path="/admin/ShopKeeper" component={AdminShopKeeperList} />
+              <Route
+                exact
+                path="/admin/ShopKeeper"
+                component={AdminShopKeeperList}
+              />
               <Route exact path="/admin/Shop" component={AdminShop} />
               <Route exact path="/admin/Products" component={AdminProducts} />
               <Route exact path="/admin/customers" component={AdminCustomers} />
-              <Route path="/shops" component={ShopPage} /> 
+              <Route path="/shops" component={ShopPage} />
               <Route exact path="/checkout" component={CheckoutPage} />
             </Switch>
           </div>

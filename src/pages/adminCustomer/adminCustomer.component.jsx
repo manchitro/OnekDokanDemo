@@ -14,7 +14,11 @@ const AdminCustomers = () => {
             <tr key={id}>
               <td>{customerName}</td>
               <td>
-          <CustomButton type="button">{status === "active" ? "Ban the Customer" : "Unban the Customer"}</CustomButton>
+                <CustomButton type="button">
+                  {status === "active"
+                    ? "Ban the Customer"
+                    : "Unban the Customer"}
+                </CustomButton>
               </td>
             </tr>
           ))}

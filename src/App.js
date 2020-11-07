@@ -6,6 +6,7 @@ import ProfileContext from "./contexts/ProfileContext";
 
 import HomePage from "./pages/homepage/homepage.component";
 import LoginPage from "./pages/loginpage/loginpage.component";
+import ShopPage from "./pages/shop/shop.component";
 
 import { Navigation } from "./components/navigation/navigation.component";
 import { Sidebar } from "./components/sidebar/sidebar.component";
@@ -37,13 +38,16 @@ function App() {
       <HeaderContext.Provider value={HeaderState}> 
       <ProfileContext.Provider value={ProfileState}>
         <Navigation />
-        <Sidebar />
+
         <BrowserRouter>
           <Switch>
             <Route exact path="/" component={HomePage} />
             <Route exact path="/login" component={LoginPage} />
+            <Route path="/shop" component={ShopPage} />          
           </Switch>
         </BrowserRouter>
+
+        <Sidebar />
         </ProfileContext.Provider>
       </HeaderContext.Provider>
     </div>

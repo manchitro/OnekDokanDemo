@@ -26,18 +26,18 @@ const Navigation = ({ hidden }) => {
 
   //using cartref to know if mousedown was on cart icon or dropdown
   useEffect(() => {
-    const handler= (event) => {
+    const handler = (event) => {
       //if mousedown was not on cart icon or dropdown (outside), close cart
       if (!cartRef.current.contains(event.target)) {
-        setIsCartHidden(true);        
+        setIsCartHidden(true);
       }
-    }
+    };
 
     document.addEventListener("mousedown", handler);
 
     return () => {
-      document.removeEventListener("mousedown", handler)
-    }
+      document.removeEventListener("mousedown", handler);
+    };
   });
 
   return (
@@ -55,8 +55,8 @@ const Navigation = ({ hidden }) => {
         <NavButton buttonText="Login" buttonColor="green" />
       )}
       <div ref={cartRef}>
-      <CartIcon />
-      {isCartHidden ? null : <CartDropdown />}
+        <CartIcon />
+        {isCartHidden ? null : <CartDropdown />}
       </div>
     </div>
   );

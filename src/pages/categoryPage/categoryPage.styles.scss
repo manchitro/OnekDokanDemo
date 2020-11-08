@@ -1,0 +1,17 @@
+.collection-page{
+    
+}
+
+.items{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.title{
+    font-size: 28px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #707070;
+    text-transform: uppercase;
+}

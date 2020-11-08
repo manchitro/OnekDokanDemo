@@ -1,4 +1,46 @@
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
+
 .bigContainer {
-  position: absolute;
-  top: 200px;
+  text-align: center;
+}
+
+#profile-img img {
+  height: 150px;
+  width: 150px;
+  border-radius: 100%;
+  padding-top: 20px;
+  align-items: center;
+}
+
+#studentForm h4 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#studentForm label {
+  margin-top: 10px;
+  font-size: 18px;
+  color: grey;
+  padding-top: 10px;
+}
+
+#studentForm input {
+  font-size: 15px;
+  color: grey;
+  padding-top: 10px;
+  margin-bottom: 10px;
+}
+
+#student-info input {
+  width: 150px;
+  margin-bottom: -10px;
+}
+
+#student-info button {
+  margin: 20px auto 0;
+}
+
+.links {
+  text-decoration: none;
 }

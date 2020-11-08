@@ -5,7 +5,7 @@ import FormInput from "../../components/form-input/form-input.component";
 
 const shopKeeperProduct = () => {
   return (
-    <div>
+    <div className="shop-keeper-products">
       <h1>This is the shop keeper Product page</h1>
       <div>
         <h1>Potato</h1>

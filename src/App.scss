@@ -1,5 +1,5 @@
-/* .containers {
-  display: flex;
+.container {
+  /* display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
@@ -7,8 +7,10 @@
   font-family: "Poppins", sans-serif;
   color: #505050;
   background-color:#f6f6f6;
-  position: relative;
-} */
+  position: relative; */
+  margin-top: 100px;
+  font-family: "Poppins", sans-serif;
+}
 
 /* * {
   box-sizing: border-box;

@@ -12,6 +12,11 @@ import AdminShopKeeperList from "./pages/adminShopKeeperList/adminShopKeeperList
 import AdminShop from "./pages/adminShop/adminShop.component";
 import AdminProducts from "./pages/adminProducts/adminProducts.component";
 import AdminCustomers from "./pages/adminCustomer/adminCustomer.component";
+import ShopKeeperNew from "./pages/shopKeeperNew/shopKeeperNew.component";
+import ShopKeeperCategory from "./pages/shopKeeperCategory/shopKeeperCategory.component";
+import ShopKeeperProduct from "./pages/shopKeeperProduct/shopKeeperProduct.component";
+import Account from "./pages/account/account.component";
+
 import ShopPage from "./pages/shop/shop.component";
 import CheckoutPage from "./pages/checkout/checkout.component";
 
@@ -76,7 +81,11 @@ function App() {
               <Route exact path="/admin/Shop" component={AdminShop} />
               <Route exact path="/admin/Products" component={AdminProducts} />
               <Route exact path="/admin/customers" component={AdminCustomers} />
+              <Route exact path="/shopKeeper/new" component={ShopKeeperNew} />
+              <Route exact path="/shopKeeper/product" component={ShopKeeperProduct} />
+              <Route exact path="/shopKeeper/category" component={ShopKeeperCategory} />
               <Route path="/shops" component={ShopPage} />
+              <Route path="/account" component={Account} />
               <Route exact path="/checkout" component={CheckoutPage} />
             </Switch>
           </div>

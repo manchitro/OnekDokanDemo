@@ -6,7 +6,7 @@ import TileSection from "../../components/tile-section/tile-section.component";
 const shopKeeperCategory= () => {
   return (
     <div className="containers">
-      <TileSection sectionName="Your Categories" ShopList={CategoryList} />
+      <TileSection link="product" sectionName="Your Categories" ShopList={CategoryList} />
     </div>
   );
 };

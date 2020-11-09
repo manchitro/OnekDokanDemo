@@ -10,7 +10,9 @@ var shadow = {
 
 export const NavButton = (props) => {
   const { currentPage } = useContext(HeaderContext);
-  const { setIsUserLoggedIn } = useContext(ProfileContext);
+  const { setIsUserLoggedIn, setIsUserAdmin, setIsUserShopKeeper } = useContext(
+    ProfileContext
+  );
 
   let history = useHistory();
   const redirect = () => {
@@ -19,6 +21,8 @@ export const NavButton = (props) => {
 
   const logout = () => {
     setIsUserLoggedIn(false);
+    setIsUserShopKeeper(false);
+    setIsUserAdmin(false);
     history.push("/login");
   };
 

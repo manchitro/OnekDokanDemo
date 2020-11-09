@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./App.scss";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 
 import HeaderContext from "./contexts/HeaderContext";
 import ProfileContext from "./contexts/ProfileContext";
@@ -32,18 +32,36 @@ function App() {
     "https://www.biography.com/.image/t_share/MTQyMDA0NDgwMzUzNzcyNjA2/mark-zuckerberg_gettyimages-512304736jpg.jpg"
   );
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
+  const [isUserAdmin, setIsUserAdmin] = useState(false);
+  const [isUserShopKeeper, setIsUserShopKeeper] = useState(false);
   const [isCartHidden, setIsCartHidden] = useState(true);
 
   useEffect(() => {
     const data = localStorage.getItem("login-status");
     if (data) {
       setIsUserLoggedIn(JSON.parse(data));
+      const adminData = localStorage.getItem("admin-status");
+      const shopKeeperData = localStorage.getItem("shopKeeper-status");
+      if (adminData) {
+        setIsUserAdmin(JSON.parse(adminData));
+      }
+      if (shopKeeperData) {
+        setIsUserShopKeeper(JSON.parse(shopKeeperData));
+      }
     }
   }, []);
 
   useEffect(() => {
     localStorage.setItem("login-status", JSON.stringify(isUserLoggedIn));
   }, [isUserLoggedIn]);
+
+  useEffect(() => {
+    localStorage.setItem("admin-status", JSON.stringify(isUserAdmin));
+  }, [isUserAdmin]);
+
+  useEffect(() => {
+    localStorage.setItem("shopKeeper-status", JSON.stringify(isUserShopKeeper));
+  }, [isUserShopKeeper]);
 
   const HeaderState = {
     currentPage,
@@ -61,6 +79,10 @@ function App() {
     setProfilePicLink,
     isUserLoggedIn,
     setIsUserLoggedIn,
+    setIsUserShopKeeper,
+    isUserShopKeeper,
+    setIsUserAdmin,
+    isUserAdmin,
   };
 
   return (
@@ -71,20 +93,34 @@ function App() {
           <div className="container">
             <Switch>
               <Route exact path="/" component={HomePage} />
-              {/* {isUserLoggedIn && <Redirect exact path="/login" to="/" />} */}
+              {isUserLoggedIn && <Redirect exact path="/login" to="/" />}
               <Route exact path="/login" component={LoginPage} />
+              {isUserLoggedIn && <Redirect exact path="/signup" to="/" />}
               <Route exact path="/signup" component={SignUpPage} />
               <Route
                 exact
                 path="/admin/ShopKeeper"
                 component={AdminShopKeeperList}
               />
+              {/* {(!isUserAdmin) && (<Redirect exact path="/admin" to="/" />)} */}
               <Route exact path="/admin/Shop" component={AdminShop} />
-              <Route exact path="/admin/Products" component={AdminProducts} />
+              <Route exact path="/admin/product" component={AdminProducts} />
               <Route exact path="/admin/customers" component={AdminCustomers} />
+              {/* {!isUserShopKeeper && (
+                <Redirect exact path="/sho
+                pkeeper" to="/" />
+              )} */}
               <Route exact path="/shopKeeper/new" component={ShopKeeperNew} />
-              <Route exact path="/shopKeeper/product" component={ShopKeeperProduct} />
-              <Route exact path="/shopKeeper/category" component={ShopKeeperCategory} />
+              <Route
+                exact
+                path="/shopKeeper/product"
+                component={ShopKeeperProduct}
+              />
+              <Route
+                exact
+                path="/shopKeeper/category"
+                component={ShopKeeperCategory}
+              />
               <Route path="/shops" component={ShopPage} />
               <Route exact path="/account" component={Account} />
               <Route exact path="/account/edit" component={AccountEdit} />

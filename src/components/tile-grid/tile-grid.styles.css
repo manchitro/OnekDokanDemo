@@ -1,6 +1,11 @@
-.tile-grid{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
+.tile-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.link {
+  text-decoration: none;
+  color: #707070;
 }

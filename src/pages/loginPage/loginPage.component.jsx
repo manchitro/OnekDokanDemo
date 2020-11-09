@@ -11,22 +11,44 @@ import ProfileContext from "../../contexts/ProfileContext";
 import "./loginPage.styles.scss";
 
 const LoginPage = () => {
-  const { isUserLoggedIn, setIsUserLoggedIn } = useContext(ProfileContext);
+  const {
+    isUserLoggedIn,
+    setIsUserLoggedIn,
+    setIsUserAdmin,
+    setIsUserShopKeeper,
+  } = useContext(ProfileContext);
+
   let history = useHistory();
+
   const validateUser = () => {
-    if (uid === "admin" && password === "admin") {
+    if (uid === "user" && password === "user") {
       setIsUserLoggedIn(true);
+      setIsUserAdmin(false);
+      setIsUserShopKeeper(false);
+      history.push("/");
+    } else if (uid === "admin" && password === "admin") {
+      setIsUserLoggedIn(true);
+      setIsUserAdmin(true);
+      setIsUserShopKeeper(false);
+      history.push("/");
+    } else if (uid === "shopkeeper" && password === "shopkeeper") {
+      setIsUserLoggedIn(true);
+      setIsUserAdmin(false);
+      setIsUserShopKeeper(true);
       history.push("/");
     } else {
       alert("username or password is incorrect");
+      setIsUserLoggedIn(false);
+      setIsUserAdmin(false);
+      setIsUserShopKeeper(false);
     }
   };
 
-  useEffect(() => {
-    if (isUserLoggedIn) {
-      history.push("/");
-    }
-  });
+  // useEffect(() => {
+  //   if (isUserLoggedIn) {
+  //     history.push("/");
+  //   }
+  // });
   const [uid, setUid] = useState("");
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState("");

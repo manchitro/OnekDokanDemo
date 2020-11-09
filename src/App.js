@@ -16,6 +16,7 @@ import ShopKeeperNew from "./pages/shopKeeperNew/shopKeeperNew.component";
 import ShopKeeperCategory from "./pages/shopKeeperCategory/shopKeeperCategory.component";
 import ShopKeeperProduct from "./pages/shopKeeperProduct/shopKeeperProduct.component";
 import Account from "./pages/account/account.component";
+import AccountEdit from "./pages/accountEdit/accountEdit.component";
 
 import ShopPage from "./pages/shop/shop.component";
 import CheckoutPage from "./pages/checkout/checkout.component";
@@ -85,7 +86,8 @@ function App() {
               <Route exact path="/shopKeeper/product" component={ShopKeeperProduct} />
               <Route exact path="/shopKeeper/category" component={ShopKeeperCategory} />
               <Route path="/shops" component={ShopPage} />
-              <Route path="/account" component={Account} />
+              <Route exact path="/account" component={Account} />
+              <Route exact path="/account/edit" component={AccountEdit} />
               <Route exact path="/checkout" component={CheckoutPage} />
             </Switch>
           </div>

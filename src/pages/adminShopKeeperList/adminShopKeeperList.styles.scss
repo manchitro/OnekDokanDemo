@@ -1,11 +1,17 @@
-// .container {
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: space-around;
-//   align-items: center;
-//   height: 91vh;
-//   font-family: "Poppins", sans-serif;
-//   color: #505050;
-//   background-color:#f6f6f6;
-//   position: relative;
-// }
+.admin-shop-keeper{
+  font-family: "Poppins", sans-serif;
+  color: #505050;
+}
+
+.shopkeeper-list-table{
+  margin: auto;
+
+  th, td{
+      border: 1px solid #707070;
+      padding: 0 10px;
+  }
+
+  button{
+      width: 100%;
+  }
+}

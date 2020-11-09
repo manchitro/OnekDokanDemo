@@ -1,0 +1,17 @@
+.admin-customers{
+  font-family: "Poppins", sans-serif;
+  color: #505050;
+}
+
+.customer-list-table{
+  margin: auto;
+
+  th, td{
+      border: 1px solid #707070;
+      padding: 0 10px;
+  }
+
+  button{
+      width: 100%;
+  }
+}

@@ -1,9 +1,10 @@
 .tile {
   display: flex;
   flex-direction: column;
-  width: 40%;
-  max-width: 300px;
   height: 300px;
+  flex: 33%;
+  max-width: 300px;
+  margin-bottom: 80px;
   // box-sizing: border-box;
   cursor: pointer;
   img {

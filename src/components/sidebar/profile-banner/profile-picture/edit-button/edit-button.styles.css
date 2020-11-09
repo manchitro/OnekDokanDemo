@@ -8,6 +8,7 @@
     height: 28px;
     width: 28px;
     display: flex;
+    justify-content: center;
     align-items: center;
     transition: 0.3s ease;
     cursor: pointer;
@@ -17,18 +18,6 @@
     background-color: #DDD;
 }
 
-.svg-icon {
-    width: 6px;
-    height: 6px;
-  }
-  
-  .svg-icon path,
-  .svg-icon polygon,
-  .svg-icon rect {
-    fill: black;
-  }
-  
-  .svg-icon circle {
-    stroke: #4691f6;
-    stroke-width: 1;
-  }
+#pp-edit-btn img{
+  border: none;
+}

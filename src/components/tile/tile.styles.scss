@@ -1,7 +1,8 @@
 .tile {
   display: flex;
   flex-direction: column;
-  height: 300px;
+  min-height: 300px;
+  max-height: 300px;
   flex: 33%;
   max-width: 300px;
   margin-bottom: 80px;

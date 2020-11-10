@@ -16,7 +16,11 @@ export const NavButton = (props) => {
 
   let history = useHistory();
   const redirect = () => {
-    history.push(`/${props.buttonText === "Home" ? "" : props.buttonText}`);
+    if (props.buttontext === "Admin Panel") {
+      history.push(`/admin`);
+    } else {
+      history.push(`/${props.buttonText === "Home" ? "" : props.buttonText}`);
+    }
   };
 
   const logout = () => {

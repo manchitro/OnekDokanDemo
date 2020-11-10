@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 
 import FormInput from "../../components/form-input/form-input.component";
+import ProfileContext from "../../contexts/ProfileContext";
 
 import CustomButton from "../../components/custom-button/custom-button.component";
 // import { auth, createUserProfileDocument } from "../../firebase/firebase.utils";
@@ -9,7 +10,8 @@ import CustomButton from "../../components/custom-button/custom-button.component
 import "./accountEdit.styles.scss";
 
 const AccountEdit = () => {
-  const [username, setUsername] = useState("");
+  const { profileName } = useContext(ProfileContext);
+  const [username, setUsername] = useState(profileName);
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");

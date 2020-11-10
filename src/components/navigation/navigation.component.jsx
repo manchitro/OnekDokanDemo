@@ -18,7 +18,9 @@ import ProfileContext from "../../contexts/ProfileContext";
 import "./navigation.styles.css";
 
 const Navigation = ({ hidden }) => {
-  const { isUserLoggedIn } = useContext(ProfileContext);
+  const { isUserLoggedIn, isUserAdmin, isUserShopKeeper } = useContext(
+    ProfileContext
+  );
   const { isCartHidden, setIsCartHidden } = useContext(HeaderContext);
 
   //reference to cart icon and cart dropdown
@@ -46,13 +48,21 @@ const Navigation = ({ hidden }) => {
       <Logo />
       <SearchBox />
       <SearchButton />
+
+      {isUserAdmin ? <NavButton link="/admin" buttonText="Admin Panel" /> : ""}
+
       <NavButton buttonText="Home" />
-      <NavButton buttonText="Shops" />
-      <NavButton buttonText="Account" />
+
       {isUserLoggedIn === true ? (
-        <NavButton buttonText="Logout" buttonColor="red" />
+        <>
+          <NavButton buttonText="Account" />
+          <NavButton buttonText="Logout" buttonColor="red" />
+        </>
       ) : (
-        <NavButton buttonText="Login" buttonColor="green" />
+        <>
+          <NavButton buttonText="Signup" buttonColor="blue" />
+          <NavButton buttonText="Login" buttonColor="green" />
+        </>
       )}
       <div ref={cartRef}>
         <CartIcon />

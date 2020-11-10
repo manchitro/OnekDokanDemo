@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import TileSection from "../../components/tile-section/tile-section.component";
 
 import "./adminPanel.styles.scss";

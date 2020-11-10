@@ -17,7 +17,7 @@ import ProfileContext from "../../contexts/ProfileContext";
 
 import "./navigation.styles.css";
 
-const Navigation = ({ hidden }) => {
+const Navigation = () => {
   const { isUserLoggedIn, isUserAdmin, isUserShopKeeper } = useContext(
     ProfileContext
   );
@@ -49,7 +49,8 @@ const Navigation = ({ hidden }) => {
       <SearchBox />
       <SearchButton />
 
-      {isUserAdmin ? <NavButton link="/admin" buttonText="Admin Panel" /> : ""}
+      {isUserAdmin ? <NavButton buttonText="Admin Panel" /> : ""}
+      {isUserShopKeeper ? <NavButton buttonText="Shop Panel" /> : ""}
 
       <NavButton buttonText="Home" />
 

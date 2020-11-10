@@ -7,7 +7,11 @@ const TileSection = ({ sectionName, ShopList, link }) => {
   return (
     <div className="tile-section">
       <SectionTitle sectionTitle={sectionName} />
+      {link ? (
         <TileGrid link={link} shopList={ShopList} />
+      ) : (
+        <TileGrid shopList={ShopList} />
+      )}
     </div>
   );
 };

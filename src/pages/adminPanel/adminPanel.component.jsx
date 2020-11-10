@@ -8,7 +8,7 @@ import PanelData from "./adminPanel.data";
 const AdminPanel = () => {
   return (
     <div className="containers">
-      <TileSection link="/Admin%20Panel" sectionName="Featured Shops" ShopList={PanelData} />
+      <TileSection sectionName="Admin Actions" ShopList={PanelData} />
     </div>
   );
 };

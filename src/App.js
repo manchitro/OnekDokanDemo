@@ -18,6 +18,7 @@ import ShopKeeperProduct from "./pages/shopKeeperProduct/shopKeeperProduct.compo
 import Account from "./pages/account/account.component";
 import AccountEdit from "./pages/accountEdit/accountEdit.component";
 import AdminPanel from "./pages/adminPanel/adminPanel.component";
+import ShopKeeperPanel from "./pages/shopKeeperPanel/shopKeeperPanel.component";
 
 import ShopPage from "./pages/shop/shop.component";
 import CheckoutPage from "./pages/checkout/checkout.component";
@@ -100,20 +101,21 @@ function App() {
               <Route exact path="/signup" component={SignUpPage} />
               
               {/* {(!isUserAdmin) && (<Redirect exact path="/admin" to="/" />)} */}
+              <Route exact path="/admin" component={AdminPanel} />
               <Route
                 exact
-                path="/admin/ShopKeeper"
+                path="/admin/ShopKeepers"
                 component={AdminShopKeeperList}
               />
-              <Route exact path="/admin/Shop" component={AdminShop} />
-              <Route exact path="/admin/product" component={AdminProducts} />
+              <Route exact path="/admin/Shops" component={AdminShop} />
+              <Route exact path="/admin/products" component={AdminProducts} />
               <Route exact path="/admin/customers" component={AdminCustomers} />
-              <Route exact path="/admin" component={AdminPanel} />
               
               {/* {!isUserShopKeeper && (
                 <Redirect exact path="/sho
                 pkeeper" to="/" />
               )} */}
+              <Route exact path="/shopKeeper" component={ShopKeeperPanel} />
               <Route exact path="/shopKeeper/new" component={ShopKeeperNew} />
               <Route
                 exact

@@ -8,9 +8,15 @@ const TileGrid = ({ shopList, link }) => {
     <div className="tile-grid">
       {shopList.map((shop) => {
         return (
-          <Link className="link" to={link} key={shop.id}>
-            <Tile key={shop.id} shop={shop} />
-          </Link>
+          <>
+            {shop.link ? (
+              <Tile key={shop.id} shop={shop} />
+            ) : (
+              <Link className="link" to={link} key={shop.id}>
+                <Tile key={shop.id} shop={shop} />
+              </Link>
+            )}
+          </>
         );
       })}
     </div>

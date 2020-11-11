@@ -1,3 +1,24 @@
-.shop-keeper-new{
-    
-}
+.containers {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 91vh;
+    font-family: "Poppins", sans-serif;
+    color: #505050;
+    width: 70%;
+    position: relative;
+    margin: 0 auto;
+  }
+  
+  .shop-keeper-new{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 60px 60px;
+    background-color: white;
+    max-height: 500px;
+    margin: 0 auto;
+    font-family: "Poppins", sans-serif;
+  }

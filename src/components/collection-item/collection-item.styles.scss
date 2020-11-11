@@ -1,11 +1,12 @@
 .collection-item {
-  width: 13vw;
+  width: 260px;
   display: flex;
   flex-direction: column;
   height: 350px;
   align-items: center;
   position: relative;
   margin: 0 30px 50px;
+  flex: 25%;
   
 
   .image {
@@ -22,6 +23,8 @@
     position: absolute;
     top: 255px;
     display: none;
+    overflow: hidden;
+    white-space: nowrap;
   }
 
   &:hover {

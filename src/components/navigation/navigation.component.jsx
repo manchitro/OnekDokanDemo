@@ -44,15 +44,16 @@ const Navigation = () => {
 
   return (
     <div className="navigation">
-      <HamButton />
+      {/* <HamButton /> */}
       <Logo />
-      <SearchBox />
-      <SearchButton />
-
-      {isUserAdmin ? <NavButton buttonText="Admin Panel" /> : ""}
-      {isUserShopKeeper ? <NavButton buttonText="Shop Panel" /> : ""}
+      <div className="search-component">
+        <SearchBox />
+        <SearchButton />
+      </div>
 
       <NavButton buttonText="Home" />
+      {isUserAdmin ? <NavButton buttonText="Admin Panel" /> : ""}
+      {isUserShopKeeper ? <NavButton buttonText="Shop Panel" /> : ""}
 
       {isUserLoggedIn === true ? (
         <>

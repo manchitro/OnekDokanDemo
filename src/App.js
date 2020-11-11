@@ -153,7 +153,7 @@ function App() {
               <Route exact path="/checkout" component={CheckoutPage} />
             </Switch>
           </div>
-          <Sidebar />
+          {/* <Sidebar /> */}
         </ProfileContext.Provider>
       </HeaderContext.Provider>
     </div>

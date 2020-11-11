@@ -1,12 +1,12 @@
-.collection-page{
+// .collection-page{
     
-}
+// }
 
 .items{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: space-between;
 }
 
 .title{

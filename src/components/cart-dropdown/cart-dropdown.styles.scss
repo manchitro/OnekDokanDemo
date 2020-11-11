@@ -1,3 +1,12 @@
+@keyframes slideInFromTop{
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
 .cart-dropdown {
   position: absolute;
   width: 240px;
@@ -12,6 +21,7 @@
   right: 40px;
   z-index: 5;
   font-family: "Poppins", sans-serif;
+  animation: 0.2s ease 0s 1 slideInFromTop;
 
   .empty-message {
     font-size: 18px;
@@ -25,7 +35,7 @@
     flex-direction: column;
     justify-content: flex-start;
     border: 1px solid #707070;
-    overflow: scroll;
+    overflow-y: auto;
     overflow-x: hidden;
   }
 
